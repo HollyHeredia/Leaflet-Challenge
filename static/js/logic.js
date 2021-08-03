@@ -117,3 +117,12 @@ L.geoJSON(earthquakeData, {
   // Sending our earthquakes layer to the createMap function
   earthquakes.addTo(myMap);
 
+  // Get the tectonic plate data from tectonicplatesURL
+  d3.json(tectonicplatesURL, function(data) {
+    L.geoJSON(data, {
+      color: "orange",
+      weight: 2
+    }).addTo(tectonicplates);
+    tectonicplates.addTo(myMap);
+  });
+
