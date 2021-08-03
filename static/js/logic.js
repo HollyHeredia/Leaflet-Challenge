@@ -46,3 +46,9 @@ var baseMaps = {
     "Outdoors Map": outdoorsMap,
     "Dark Map": darkMap
   };
+
+  // Create overlay object to hold the overlay layer
+var overlayMaps = {
+    "Earthquakes": earthquakes,
+    "Tectonic Plates": tectonicplates
+  };
