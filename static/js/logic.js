@@ -47,8 +47,17 @@ var baseMaps = {
     "Dark Map": darkMap
   };
 
-  // Create overlay object to hold the overlay layer
+// Create overlay object to hold the overlay layer
 var overlayMaps = {
     "Earthquakes": earthquakes,
     "Tectonic Plates": tectonicplates
   };
+
+// Create the map, giving it the satelliteMap and earthquakes layers to display on load
+var myMap = L.map("map", {
+    center: [
+      37.09, -95.71
+    ],
+    zoom: 2,
+    layers: [satelliteMap, earthquakes]
+  });
