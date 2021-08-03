@@ -74,3 +74,20 @@ L.control.layers(baseMaps, overlayMaps, {
     function markerSize(magnitude) {
       return magnitude * 4;
     };
+    // Determine the marker color by depth
+  function chooseColor(depth) {
+    switch(true) {
+      case depth > 90:
+        return "red";
+      case depth > 70:
+        return "orangered";
+      case depth > 50:
+        return "orange";
+      case depth > 30:
+        return "gold";
+      case depth > 10:
+        return "yellow";
+      default:
+        return "lightgreen";
+        }
+    }
