@@ -61,3 +61,16 @@ var myMap = L.map("map", {
     zoom: 2,
     layers: [satelliteMap, earthquakes]
   });
+
+  // Create a layer control
+// Pass in the baseMaps and overlayMaps
+// Add the layer control to the map
+L.control.layers(baseMaps, overlayMaps, {
+    collapsed: false
+  }).addTo(myMap);
+  
+  d3.json(earthquakesURL, function(earthquakeData) {
+    // Determine the marker size by magnitude
+    function markerSize(magnitude) {
+      return magnitude * 4;
+    };
