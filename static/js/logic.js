@@ -91,3 +91,29 @@ L.control.layers(baseMaps, overlayMaps, {
         return "lightgreen";
         }
     }
+
+// Create a GeoJSON layer containing the features array
+// Each feature a popup describing the place and time of the earthquake
+L.geoJSON(earthquakeData, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, 
+        // Set the style of the markers based on properties.mag
+        {
+          radius: markerSize(feature.properties.mag),
+          fillColor: chooseColor(feature.geometry.coordinates[2]),
+          fillOpacity: 0.7,
+          color: "black",
+          stroke: true,
+          weight: 0.5
+        }
+      );
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("<h3>Location: " + feature.properties.place + "</h3><hr><p>Date: "
+      + new Date(feature.properties.time) + "</p><hr><p>Magnitude: " + feature.properties.mag + "</p>");
+    }
+  }).addTo(earthquakes);
+
+  // Sending our earthquakes layer to the createMap function
+  earthquakes.addTo(myMap);
+
