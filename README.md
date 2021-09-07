@@ -12,3 +12,5 @@ For more details regarding this method, please see the Python documentation rega
 
 # Contributors:
 @HollyHeredia was the sole contributor to this project
+
+Please enjoy exploring through this project!
