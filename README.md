@@ -9,3 +9,6 @@ This challenge was for Data Analytics Bootcamp to use USGS earthquake data to cr
     python -m http.server
     ```
 For more details regarding this method, please see the Python documentation regarding it located here: https://docs.python.org/3/library/http.server.html
+
+# Contributors:
+@HollyHeredia was the sole contributor to this project
